@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E67781021B3E2D330043D87D /* EExifLogicController.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781011B3E2D330043D87D /* EExifLogicController.m */; };
+		E67781071B3E2D9B0043D87D /* EExifInfoArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781041B3E2D9B0043D87D /* EExifInfoArray.m */; };
+		E67781081B3E2D9B0043D87D /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781061B3E2D9B0043D87D /* ImageData.m */; };
+		E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */; };
+		E677810E1B3E2DFD0043D87D /* EExifReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810C1B3E2DFD0043D87D /* EExifReader.m */; };
+		E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */; };
+		E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F21E41191E73CD002BE6AF /* Cocoa.framework */; };
+		E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E4A191E73CD002BE6AF /* InfoPlist.strings */; };
+		E6F21E4E191E73CD002BE6AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F21E4D191E73CD002BE6AF /* main.m */; };
+		E6F21E52191E73CD002BE6AF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E50191E73CD002BE6AF /* Credits.rtf */; };
+		E6F21E55191E73CD002BE6AF /* EEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F21E54191E73CD002BE6AF /* EEAppDelegate.m */; };
+		E6F21E58191E73CD002BE6AF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E56191E73CD002BE6AF /* MainMenu.xib */; };
+		E6F21E5A191E73CD002BE6AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E59191E73CD002BE6AF /* Images.xcassets */; };
+		E6F21E61191E73CD002BE6AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F21E60191E73CD002BE6AF /* XCTest.framework */; };
+		E6F21E62191E73CD002BE6AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F21E41191E73CD002BE6AF /* Cocoa.framework */; };
+		E6F21E6A191E73CD002BE6AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E68191E73CD002BE6AF /* InfoPlist.strings */; };
+		E6F21E6C191E73CD002BE6AF /* ExifEditor_0510Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F21E6B191E73CD002BE6AF /* ExifEditor_0510Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6F21E63191E73CD002BE6AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6F21E36191E73CD002BE6AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6F21E3D191E73CD002BE6AF;
+			remoteInfo = ExifEditor_0510;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E63E98991AC98F91009703FF /* JustExifViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JustExifViewer.entitlements; sourceTree = SOURCE_ROOT; };
+		E67781001B3E2D330043D87D /* EExifLogicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifLogicController.h; path = AppLogicalPart/EExifLogicController.h; sourceTree = "<group>"; };
+		E67781011B3E2D330043D87D /* EExifLogicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifLogicController.m; path = AppLogicalPart/EExifLogicController.m; sourceTree = "<group>"; };
+		E67781031B3E2D9B0043D87D /* EExifInfoArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifInfoArray.h; path = DataStructure/EExifInfoArray.h; sourceTree = "<group>"; };
+		E67781041B3E2D9B0043D87D /* EExifInfoArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifInfoArray.m; path = DataStructure/EExifInfoArray.m; sourceTree = "<group>"; };
+		E67781051B3E2D9B0043D87D /* ImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageData.h; path = DataStructure/ImageData.h; sourceTree = "<group>"; };
+		E67781061B3E2D9B0043D87D /* ImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageData.m; path = DataStructure/ImageData.m; sourceTree = "<group>"; };
+		E67781091B3E2DFD0043D87D /* EExifFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifFileHandler.h; path = EExifFile/EExifFileHandler.h; sourceTree = "<group>"; };
+		E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifFileHandler.m; path = EExifFile/EExifFileHandler.m; sourceTree = "<group>"; };
+		E677810B1B3E2DFD0043D87D /* EExifReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifReader.h; path = EExifFile/EExifReader.h; sourceTree = "<group>"; };
+		E677810C1B3E2DFD0043D87D /* EExifReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifReader.m; path = EExifFile/EExifReader.m; sourceTree = "<group>"; };
+		E6E3FD871B3E2C1700229A47 /* EEAddableClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAddableClipView.h; path = ComponentViewPart/EEAddableClipView.h; sourceTree = "<group>"; };
+		E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAddableClipView.m; path = ComponentViewPart/EEAddableClipView.m; sourceTree = "<group>"; };
+		E6F21E3E191E73CD002BE6AF /* JustExifViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustExifViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F21E41191E73CD002BE6AF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E6F21E44191E73CD002BE6AF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E6F21E45191E73CD002BE6AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E6F21E46191E73CD002BE6AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6F21E49191E73CD002BE6AF /* JustExifViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JustExifViewer-Info.plist"; sourceTree = "<group>"; };
+		E6F21E4B191E73CD002BE6AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6F21E4D191E73CD002BE6AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E6F21E4F191E73CD002BE6AF /* JustExifViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustExifViewer-Prefix.pch"; sourceTree = "<group>"; };
+		E6F21E51191E73CD002BE6AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E6F21E53191E73CD002BE6AF /* EEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EEAppDelegate.h; sourceTree = "<group>"; };
+		E6F21E54191E73CD002BE6AF /* EEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EEAppDelegate.m; sourceTree = "<group>"; };
+		E6F21E57191E73CD002BE6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E6F21E59191E73CD002BE6AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E6F21E5F191E73CD002BE6AF /* JustExifViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustExifViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F21E60191E73CD002BE6AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E6F21E67191E73CD002BE6AF /* JustExifViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JustExifViewerTests-Info.plist"; sourceTree = "<group>"; };
+		E6F21E69191E73CD002BE6AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6F21E6B191E73CD002BE6AF /* ExifEditor_0510Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExifEditor_0510Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6F21E3B191E73CD002BE6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F21E5C191E73CD002BE6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F21E62191E73CD002BE6AF /* Cocoa.framework in Frameworks */,
+				E6F21E61191E73CD002BE6AF /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6AAD2D21AD5555A0091B8EC /* ComponentViewPart */ = {
+			isa = PBXGroup;
+			children = (
+				E6E3FD871B3E2C1700229A47 /* EEAddableClipView.h */,
+				E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */,
+			);
+			name = ComponentViewPart;
+			sourceTree = "<group>";
+		};
+		E6CEB87D195DC7D300598D46 /* EExifFile */ = {
+			isa = PBXGroup;
+			children = (
+				E67781091B3E2DFD0043D87D /* EExifFileHandler.h */,
+				E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */,
+				E677810B1B3E2DFD0043D87D /* EExifReader.h */,
+				E677810C1B3E2DFD0043D87D /* EExifReader.m */,
+			);
+			name = EExifFile;
+			sourceTree = "<group>";
+		};
+		E6D7B6CA1A08F8E40022F018 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				E67781031B3E2D9B0043D87D /* EExifInfoArray.h */,
+				E67781041B3E2D9B0043D87D /* EExifInfoArray.m */,
+				E67781051B3E2D9B0043D87D /* ImageData.h */,
+				E67781061B3E2D9B0043D87D /* ImageData.m */,
+			);
+			name = DataStructure;
+			sourceTree = "<group>";
+		};
+		E6D7B6CB1A08F9110022F018 /* AppLogicalPart */ = {
+			isa = PBXGroup;
+			children = (
+				E67781001B3E2D330043D87D /* EExifLogicController.h */,
+				E67781011B3E2D330043D87D /* EExifLogicController.m */,
+			);
+			name = AppLogicalPart;
+			sourceTree = "<group>";
+		};
+		E6F21E35191E73CD002BE6AF = {
+			isa = PBXGroup;
+			children = (
+				E6F21E47191E73CD002BE6AF /* JustExifViewer */,
+				E6F21E65191E73CD002BE6AF /* ExifEditor_0510Tests */,
+				E6F21E40191E73CD002BE6AF /* Frameworks */,
+				E6F21E3F191E73CD002BE6AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6F21E3F191E73CD002BE6AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E3E191E73CD002BE6AF /* JustExifViewer.app */,
+				E6F21E5F191E73CD002BE6AF /* JustExifViewerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6F21E40191E73CD002BE6AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E41191E73CD002BE6AF /* Cocoa.framework */,
+				E6F21E60191E73CD002BE6AF /* XCTest.framework */,
+				E6F21E43191E73CD002BE6AF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6F21E43191E73CD002BE6AF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E44191E73CD002BE6AF /* AppKit.framework */,
+				E6F21E45191E73CD002BE6AF /* CoreData.framework */,
+				E6F21E46191E73CD002BE6AF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E6F21E47191E73CD002BE6AF /* JustExifViewer */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAD2D21AD5555A0091B8EC /* ComponentViewPart */,
+				E63E98991AC98F91009703FF /* JustExifViewer.entitlements */,
+				E6D7B6CB1A08F9110022F018 /* AppLogicalPart */,
+				E6D7B6CA1A08F8E40022F018 /* DataStructure */,
+				E6CEB87D195DC7D300598D46 /* EExifFile */,
+				E6F21E53191E73CD002BE6AF /* EEAppDelegate.h */,
+				E6F21E54191E73CD002BE6AF /* EEAppDelegate.m */,
+				E6F21E56191E73CD002BE6AF /* MainMenu.xib */,
+				E6F21E59191E73CD002BE6AF /* Images.xcassets */,
+				E6F21E48191E73CD002BE6AF /* Supporting Files */,
+			);
+			name = JustExifViewer;
+			path = ExifEditor_0510;
+			sourceTree = "<group>";
+		};
+		E6F21E48191E73CD002BE6AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E49191E73CD002BE6AF /* JustExifViewer-Info.plist */,
+				E6F21E4A191E73CD002BE6AF /* InfoPlist.strings */,
+				E6F21E4D191E73CD002BE6AF /* main.m */,
+				E6F21E4F191E73CD002BE6AF /* JustExifViewer-Prefix.pch */,
+				E6F21E50191E73CD002BE6AF /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6F21E65191E73CD002BE6AF /* ExifEditor_0510Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E6B191E73CD002BE6AF /* ExifEditor_0510Tests.m */,
+				E6F21E66191E73CD002BE6AF /* Supporting Files */,
+			);
+			path = ExifEditor_0510Tests;
+			sourceTree = "<group>";
+		};
+		E6F21E66191E73CD002BE6AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6F21E67191E73CD002BE6AF /* JustExifViewerTests-Info.plist */,
+				E6F21E68191E73CD002BE6AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6F21E3D191E73CD002BE6AF /* JustExifViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F21E6F191E73CD002BE6AF /* Build configuration list for PBXNativeTarget "JustExifViewer" */;
+			buildPhases = (
+				E6F21E3A191E73CD002BE6AF /* Sources */,
+				E6F21E3B191E73CD002BE6AF /* Frameworks */,
+				E6F21E3C191E73CD002BE6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JustExifViewer;
+			productName = ExifEditor_0510;
+			productReference = E6F21E3E191E73CD002BE6AF /* JustExifViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6F21E5E191E73CD002BE6AF /* JustExifViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F21E72191E73CD002BE6AF /* Build configuration list for PBXNativeTarget "JustExifViewerTests" */;
+			buildPhases = (
+				E6F21E5B191E73CD002BE6AF /* Sources */,
+				E6F21E5C191E73CD002BE6AF /* Frameworks */,
+				E6F21E5D191E73CD002BE6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6F21E64191E73CD002BE6AF /* PBXTargetDependency */,
+			);
+			name = JustExifViewerTests;
+			productName = ExifEditor_0510Tests;
+			productReference = E6F21E5F191E73CD002BE6AF /* JustExifViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6F21E36191E73CD002BE6AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EE;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Hurderella;
+				TargetAttributes = {
+					E6F21E3D191E73CD002BE6AF = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					E6F21E5E191E73CD002BE6AF = {
+						TestTargetID = E6F21E3D191E73CD002BE6AF;
+					};
+				};
+			};
+			buildConfigurationList = E6F21E39191E73CD002BE6AF /* Build configuration list for PBXProject "JustExifViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6F21E35191E73CD002BE6AF;
+			productRefGroup = E6F21E3F191E73CD002BE6AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6F21E3D191E73CD002BE6AF /* JustExifViewer */,
+				E6F21E5E191E73CD002BE6AF /* JustExifViewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6F21E3C191E73CD002BE6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */,
+				E6F21E5A191E73CD002BE6AF /* Images.xcassets in Resources */,
+				E6F21E52191E73CD002BE6AF /* Credits.rtf in Resources */,
+				E6F21E58191E73CD002BE6AF /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F21E5D191E73CD002BE6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F21E6A191E73CD002BE6AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6F21E3A191E73CD002BE6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E67781021B3E2D330043D87D /* EExifLogicController.m in Sources */,
+				E67781081B3E2D9B0043D87D /* ImageData.m in Sources */,
+				E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */,
+				E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */,
+				E677810E1B3E2DFD0043D87D /* EExifReader.m in Sources */,
+				E6F21E55191E73CD002BE6AF /* EEAppDelegate.m in Sources */,
+				E6F21E4E191E73CD002BE6AF /* main.m in Sources */,
+				E67781071B3E2D9B0043D87D /* EExifInfoArray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F21E5B191E73CD002BE6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F21E6C191E73CD002BE6AF /* ExifEditor_0510Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6F21E64191E73CD002BE6AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6F21E3D191E73CD002BE6AF /* JustExifViewer */;
+			targetProxy = E6F21E63191E73CD002BE6AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6F21E4A191E73CD002BE6AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6F21E4B191E73CD002BE6AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E6F21E50191E73CD002BE6AF /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6F21E51191E73CD002BE6AF /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E6F21E56191E73CD002BE6AF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6F21E57191E73CD002BE6AF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E6F21E68191E73CD002BE6AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6F21E69191E73CD002BE6AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6F21E6D191E73CD002BE6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E6F21E6E191E73CD002BE6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E6F21E70191E73CD002BE6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JustExifViewer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
+				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				PRODUCT_NAME = JustExifViewer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E6F21E71191E73CD002BE6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JustExifViewer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
+				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				PRODUCT_NAME = JustExifViewer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E6F21E73191E73CD002BE6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExifEditor_0510.app/Contents/MacOS/ExifEditor_0510";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExifEditor_0510/ExifEditor_0510-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ExifEditor_0510Tests/JustExifViewerTests-Info.plist";
+				PRODUCT_NAME = JustExifViewerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E6F21E74191E73CD002BE6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExifEditor_0510.app/Contents/MacOS/ExifEditor_0510";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExifEditor_0510/ExifEditor_0510-Prefix.pch";
+				INFOPLIST_FILE = "ExifEditor_0510Tests/JustExifViewerTests-Info.plist";
+				PRODUCT_NAME = JustExifViewerTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6F21E39191E73CD002BE6AF /* Build configuration list for PBXProject "JustExifViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F21E6D191E73CD002BE6AF /* Debug */,
+				E6F21E6E191E73CD002BE6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F21E6F191E73CD002BE6AF /* Build configuration list for PBXNativeTarget "JustExifViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F21E70191E73CD002BE6AF /* Debug */,
+				E6F21E71191E73CD002BE6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F21E72191E73CD002BE6AF /* Build configuration list for PBXNativeTarget "JustExifViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F21E73191E73CD002BE6AF /* Debug */,
+				E6F21E74191E73CD002BE6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6F21E36191E73CD002BE6AF /* Project object */;
+}
