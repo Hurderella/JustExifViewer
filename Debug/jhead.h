@@ -54,15 +54,18 @@ typedef unsigned char uchar;
 
 #ifndef CONSOLE
 
-    typedef int (*WriteData)(char*);
+    typedef int (*InfoPushListener)(char*);
+    typedef int (^INFO_PUSH)(char*);
 
     extern char imageInfoString[65536];
-    // #define INIT int idx = 0;
-    extern WriteData writeData;
-    #define printf(format, args...); snprintf(imageInfoString, 65536, format, ##args); \
-                                        writeData(imageInfoString);
 
-    int entry_main(int argc, WriteData _writeData, char **argv);
+    extern InfoPushListener PushListener;
+    extern INFO_PUSH InfoPush;
+    #define printf(format, args...); {snprintf(imageInfoString, 65536, format, ##args); \
+                                    InfoPush(imageInfoString);}
+
+    int entry_main(int argc, INFO_PUSH infoData, char** argv);
+//    int entry_main(int argc, InfoPushListener infoData, char** argv);
 
 #endif
 //--------------------------------------------------------------------------

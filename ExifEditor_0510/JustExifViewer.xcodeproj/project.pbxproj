@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E667F6E81B5B84BC00506817 /* libjheadCustom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E667F6E71B5B84BC00506817 /* libjheadCustom.a */; };
+		E667F6F31B5B94C800506817 /* EEJhead.m in Sources */ = {isa = PBXBuildFile; fileRef = E667F6F21B5B94C800506817 /* EEJhead.m */; };
 		E67781021B3E2D330043D87D /* EExifLogicController.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781011B3E2D330043D87D /* EExifLogicController.m */; };
 		E67781071B3E2D9B0043D87D /* EExifInfoArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781041B3E2D9B0043D87D /* EExifInfoArray.m */; };
 		E67781081B3E2D9B0043D87D /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781061B3E2D9B0043D87D /* ImageData.m */; };
@@ -38,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		E63E98991AC98F91009703FF /* JustExifViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JustExifViewer.entitlements; sourceTree = SOURCE_ROOT; };
+		E667F6E61B5B84BC00506817 /* jhead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jhead.h; path = ../Debug/jhead.h; sourceTree = "<group>"; };
+		E667F6E71B5B84BC00506817 /* libjheadCustom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjheadCustom.a; path = ../Debug/libjheadCustom.a; sourceTree = "<group>"; };
+		E667F6F11B5B94C800506817 /* EEJhead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEJhead.h; path = DataStructure/EEJhead.h; sourceTree = "<group>"; };
+		E667F6F21B5B94C800506817 /* EEJhead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEJhead.m; path = DataStructure/EEJhead.m; sourceTree = "<group>"; };
 		E67781001B3E2D330043D87D /* EExifLogicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifLogicController.h; path = AppLogicalPart/EExifLogicController.h; sourceTree = "<group>"; };
 		E67781011B3E2D330043D87D /* EExifLogicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifLogicController.m; path = AppLogicalPart/EExifLogicController.m; sourceTree = "<group>"; };
 		E67781031B3E2D9B0043D87D /* EExifInfoArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifInfoArray.h; path = DataStructure/EExifInfoArray.h; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */,
+				E667F6E81B5B84BC00506817 /* libjheadCustom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E667F6E51B5B849B00506817 /* jheadCustom */ = {
+			isa = PBXGroup;
+			children = (
+				E667F6E61B5B84BC00506817 /* jhead.h */,
+				E667F6E71B5B84BC00506817 /* libjheadCustom.a */,
+			);
+			name = jheadCustom;
+			sourceTree = "<group>";
+		};
 		E6AAD2D21AD5555A0091B8EC /* ComponentViewPart */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +135,8 @@
 				E67781041B3E2D9B0043D87D /* EExifInfoArray.m */,
 				E67781051B3E2D9B0043D87D /* ImageData.h */,
 				E67781061B3E2D9B0043D87D /* ImageData.m */,
+				E667F6F11B5B94C800506817 /* EEJhead.h */,
+				E667F6F21B5B94C800506817 /* EEJhead.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -135,6 +153,7 @@
 		E6F21E35191E73CD002BE6AF = {
 			isa = PBXGroup;
 			children = (
+				E667F6E51B5B849B00506817 /* jheadCustom */,
 				E6F21E47191E73CD002BE6AF /* JustExifViewer */,
 				E6F21E65191E73CD002BE6AF /* ExifEditor_0510Tests */,
 				E6F21E40191E73CD002BE6AF /* Frameworks */,
@@ -326,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E67781021B3E2D330043D87D /* EExifLogicController.m in Sources */,
+				E667F6F31B5B94C800506817 /* EEJhead.m in Sources */,
 				E67781081B3E2D9B0043D87D /* ImageData.m in Sources */,
 				E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */,
 				E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */,
@@ -470,6 +490,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
 				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/heochansoon/Documents/XcodeProject/JustExifViewer/Debug,
+				);
 				PRODUCT_NAME = JustExifViewer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -485,6 +509,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
 				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/heochansoon/Documents/XcodeProject/JustExifViewer/Debug,
+				);
 				PRODUCT_NAME = JustExifViewer;
 				WRAPPER_EXTENSION = app;
 			};

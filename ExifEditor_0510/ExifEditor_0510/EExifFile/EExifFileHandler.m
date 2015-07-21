@@ -83,7 +83,7 @@ ENDIAN_FUNC littleEndianShift = ^u_int(u_char* data, ByteUnit byteUnit){
         [NSException raise:@"EndianErr" format:@"Invalid Endian Enum"];
     }
     readEndian = endian;
-    NSLog(@"endian is = %x", readEndian);
+    //NSLog(@"endian is = %x", readEndian);
     curEndianShift =
         (readEndian == EXIF_BIG_ENDIAN? bigEndianShift:littleEndianShift);
 }

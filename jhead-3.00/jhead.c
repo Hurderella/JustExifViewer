@@ -1441,10 +1441,13 @@ static time_t ParseCmdDate(char * DateSpecified)
 //--------------------------------------------------------------------------
 #ifndef CONSOLE
     char imageInfoString[65536];
-    WriteData writeData;
+    int writeIndex = 0;
+    InfoPushListener PushListener;
+    INFO_PUSH InfoPush;
 
-    int entry_main(int argc, WriteData _writeData, char **argv)
-
+    int entry_main(int argc, INFO_PUSH infoPush, char** argv)
+//    int entry_main(int argc, InfoPushListener pushListener, char **argv)
+//    int entry_main(int argc, char* infoData, char** argv)
 #else
     int main (int argc, char **argv)
 #endif
@@ -1453,7 +1456,8 @@ static time_t ParseCmdDate(char * DateSpecified)
     char * arg;
     progname = argv[0];
 #ifndef CONSOLE
-    writeData = _writeData;
+    InfoPush = infoPush;
+//    PushListener = pushListener;
 #endif
     for (argn=1;argn<argc;argn++){
         arg = argv[argn];

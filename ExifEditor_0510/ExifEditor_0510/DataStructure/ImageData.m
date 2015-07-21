@@ -7,6 +7,8 @@
 //
 
 #import "ImageData.h"
+#import "EEJhead.h"
+
 
 @implementation ImageData
 
@@ -156,7 +158,6 @@
 
 }*/
 
-
 - (void) makeDetailExifInfoData:(NSString*) filePath
                    Ifd_0_Fmt_Key:(NSArray*) keysOf_0_ifd
                 Ifd_0_Fmt_String:(NSArray*) fmtStrOf_0_ifd
@@ -174,23 +175,23 @@
     NSString* imageInfoStr = @"";
     
     NSDictionary* dicOf_0_ifd = self->ExifIfdDictionary;
-    NSDictionary* dicOf_sub_ifd = self->SubIfdDictionary;
-    //    NSDictionary* dicOf_thumb_ifd = makingInfo->ThumbIfdDictionary;
+//    NSDictionary* dicOf_sub_ifd = self->SubIfdDictionary;
 
-    NSDictionary* tagOf0Dic = [NSDictionary dictionaryWithObjects:fmtStrOf_0_ifd
-                                                          forKeys:keysOf_0_ifd];
+//    NSDictionary* tagOf0Dic = [NSDictionary dictionaryWithObjects:fmtStrOf_0_ifd
+//                                                          forKeys:keysOf_0_ifd];
+//
+//    NSDictionary* tagOfSubDic = [NSDictionary dictionaryWithObjects:fmtStrOf_sub_ifd
+//                                                            forKeys:keysOf_sub_ifd];
 
-    NSDictionary* tagOfSubDic = [NSDictionary dictionaryWithObjects:fmtStrOf_sub_ifd
-                                                            forKeys:keysOf_sub_ifd];
-
-    imageInfoStr = [self makingImageInfoStringWithOrderedKey:keysOf_0_ifd//orderedKeysOf0IFD
-                                                     InfoDic:dicOf_0_ifd
-                                                      FmtDic:tagOf0Dic];
-    
-    imageInfoStr = [imageInfoStr stringByAppendingString:
-                    [self makingImageInfoStringWithOrderedKey:keysOf_sub_ifd//orderedKeysOfSubIFD
-                                                      InfoDic:dicOf_sub_ifd
-                                                       FmtDic:tagOfSubDic]];
+//    imageInfoStr = [self makingImageInfoStringWithOrderedKey:keysOf_0_ifd//orderedKeysOf0IFD
+//                                                     InfoDic:dicOf_0_ifd
+//                                                      FmtDic:tagOf0Dic];
+//    
+//    imageInfoStr = [imageInfoStr stringByAppendingString:
+//                    [self makingImageInfoStringWithOrderedKey:keysOf_sub_ifd//orderedKeysOfSubIFD
+//                                                      InfoDic:dicOf_sub_ifd
+//                                                       FmtDic:tagOfSubDic]];
+    imageInfoStr = [EEJhead runParsing:self->FullPath];
     
     IfdInfo* dateIfd = dicOf_0_ifd[@"0132"];
     if (dateIfd) {

@@ -336,6 +336,7 @@ int ReadJpegSections (FILE * infile, ReadMode_t ReadMode)
                 break;
         }
     }
+
     return TRUE;
 }
 
@@ -370,9 +371,9 @@ int ReadJpegFile(const char * FileName, ReadMode_t ReadMode)
         return FALSE;
     }
 
-
     // Scan the JPEG headers.
     ret = ReadJpegSections(infile, ReadMode);
+
     if (!ret){
         if (ReadMode == READ_ANY){
             // Process any files mode.  Ignore the fact that it's not

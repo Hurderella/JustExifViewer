@@ -841,10 +841,14 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
                 break;
 
             case TAG_EXIF_OFFSET:
-                if (ShowTags) printf("%s    Exif Dir:",IndentString);
+                if (ShowTags) {
+                    printf("%s    Exif Dir:",IndentString);
+                }
 
             case TAG_INTEROP_OFFSET:
-                if (Tag == TAG_INTEROP_OFFSET && ShowTags) printf("%s    Interop Dir:",IndentString);
+                if (Tag == TAG_INTEROP_OFFSET && ShowTags){
+                    printf("%s    Interop Dir:",IndentString);
+                }
                 {
                     unsigned char * SubdirStart;
                     SubdirStart = OffsetBase + Get32u(ValuePtr);
@@ -1001,11 +1005,15 @@ void process_EXIF (unsigned char * ExifSection, unsigned int length)
     }
 
     if (memcmp(ExifSection+8,"II",2) == 0){
-        if (ShowTags) printf("Exif section in Intel order\n");
+        if (ShowTags) {
+            printf("Exif section in Intel order\n");
+        }
         MotorolaOrder = 0;
     }else{
         if (memcmp(ExifSection+8,"MM",2) == 0){
-            if (ShowTags) printf("Exif section in Motorola order\n");
+            if (ShowTags) {
+                printf("Exif section in Motorola order\n");
+            }
             MotorolaOrder = 1;
         }else{
             ErrNonfatal("Invalid Exif alignment marker.",0,0);
