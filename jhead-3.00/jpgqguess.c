@@ -145,7 +145,9 @@ static int jpeg_zigzag_order[64] = {
             }else{
                 qual = 5000.0 / cumsf;
             }
-            if (ShowTags>1)  printf("  ");
+            if (ShowTags>1)  {
+                printf("  ");    
+            }
 
             if (ShowTags){
                 printf("Approximate quality factor for qtable %d: %.0f (scale %.2f, var %.2f)\n",

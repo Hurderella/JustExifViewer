@@ -61,8 +61,10 @@ typedef unsigned char uchar;
 
     extern InfoPushListener PushListener;
     extern INFO_PUSH InfoPush;
-    #define printf(format, args...); {snprintf(imageInfoString, 65536, format, ##args); \
-                                    InfoPush(imageInfoString);}
+    #define printf(format, args...); { snprintf(imageInfoString, 65536, format, ##args); \
+                                    InfoPush(imageInfoString); }
+    #define putchar(c); {imageInfoString[0] = (c); imageInfoString[1] = 0; \
+                        InfoPush(imageInfoString);}
 
     int entry_main(int argc, INFO_PUSH infoData, char** argv);
 //    int entry_main(int argc, InfoPushListener infoData, char** argv);
