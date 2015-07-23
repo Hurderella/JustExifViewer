@@ -454,22 +454,6 @@
                                         </binding>
                                     </connections>
                                 </datePicker>
-                                <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-6M-onA">
-                                    <rect key="frame" x="290" y="14" width="282" height="22"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0Tt-aX-FVS">
-                                        <font key="font" metaFont="system"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                    <connections>
-                                        <binding destination="BZA-Xa-xcn" name="value" keyPath="selection.FullPath" id="qFV-MO-OZI">
-                                            <dictionary key="options">
-                                                <string key="NSMultipleValuesPlaceholder">-</string>
-                                                <string key="NSNoSelectionPlaceholder">Opened File Path</string>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </textField>
                                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-xV-0fo">
                                     <rect key="frame" x="18" y="45" width="554" height="249"/>
                                     <clipView key="contentView" id="O4o-2u-fC0">
@@ -505,20 +489,37 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
+                                <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-6M-onA">
+                                    <rect key="frame" x="290" y="14" width="282" height="22"/>
+                                    <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0Tt-aX-FVS">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="BZA-Xa-xcn" name="value" keyPath="selection.FullPath" id="qFV-MO-OZI">
+                                            <dictionary key="options">
+                                                <string key="NSMultipleValuesPlaceholder">-</string>
+                                                <string key="NSNoSelectionPlaceholder">Opened File Path</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
                             </subviews>
                         </view>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tyo-6M-onA" secondAttribute="bottom" constant="11" id="1aT-7D-q5n"/>
                             <constraint firstItem="b2d-xV-0fo" firstAttribute="top" secondItem="XDn-83-2uT" secondAttribute="top" constant="25" id="6Gb-fU-4ZL"/>
                             <constraint firstAttribute="trailing" secondItem="b2d-xV-0fo" secondAttribute="trailing" constant="16" id="6aw-9V-Usr"/>
                             <constraint firstItem="hQo-Ie-Vfi" firstAttribute="leading" secondItem="ejN-OL-xsB" secondAttribute="trailing" constant="4" id="6gm-hI-gGr"/>
                             <constraint firstItem="ejN-OL-xsB" firstAttribute="leading" secondItem="b2d-xV-0fo" secondAttribute="leading" id="D3A-aX-ejU"/>
-                            <constraint firstAttribute="bottom" secondItem="hQo-Ie-Vfi" secondAttribute="bottom" constant="11" id="E1H-ci-ORR"/>
                             <constraint firstItem="ejN-OL-xsB" firstAttribute="top" secondItem="b2d-xV-0fo" secondAttribute="bottom" constant="10" id="EeL-Xe-nnT"/>
                             <constraint firstAttribute="trailing" secondItem="tyo-6M-onA" secondAttribute="trailing" constant="16" id="HT5-Ky-igY"/>
                             <constraint firstAttribute="height" constant="316" id="Qla-GE-Zny"/>
                             <constraint firstItem="hQo-Ie-Vfi" firstAttribute="top" secondItem="b2d-xV-0fo" secondAttribute="bottom" constant="8" symbolic="YES" id="RMx-cE-tnZ"/>
                             <constraint firstItem="tyo-6M-onA" firstAttribute="leading" secondItem="hQo-Ie-Vfi" secondAttribute="trailing" constant="8" id="h6J-YC-Vg1"/>
                             <constraint firstItem="b2d-xV-0fo" firstAttribute="leading" secondItem="XDn-83-2uT" secondAttribute="leading" constant="16" id="oGT-La-MME"/>
+                            <constraint firstItem="tyo-6M-onA" firstAttribute="top" secondItem="b2d-xV-0fo" secondAttribute="bottom" constant="9" id="tAd-OQ-8CA"/>
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

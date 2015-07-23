@@ -25,18 +25,17 @@
     NSLog(@"runParsing Path : %@", filePath);
     
     char* args[] = {(char*)[appName cStringUsingEncoding:NSUTF8StringEncoding],
-//        "-v",
+        "-v",
         (char*)[FilePath cStringUsingEncoding:NSUTF8StringEncoding]
     };
     
 //    entry_main(2, pushListener, args);
     __block NSMutableArray* ExifInfos = [[NSMutableArray alloc] init];
 
-    entry_main(2, ^int(char* inputData) {
+    entry_main(3, ^int(char* inputData) {
         NSString* dataString =
             [NSString stringWithCString:inputData encoding:NSUTF8StringEncoding];
         [ExifInfos addObject:dataString];
-        NSLog(@"dataString : %X", *inputData);
         return 0;
     }, args);
 
