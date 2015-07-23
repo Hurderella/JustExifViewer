@@ -8,4 +8,4 @@ You can see exif data and export .csv file for your photograph
 
 -----------------------------------
 
-Before this xcode project build, you have to set project property about libjhead.a path.
+Before build this xcode project, you have to set project property about libjhead.a path.
