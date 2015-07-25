@@ -29,12 +29,16 @@
         (char*)[FilePath cStringUsingEncoding:NSUTF8StringEncoding]
     };
     
-//    entry_main(2, pushListener, args);
     __block NSMutableArray* ExifInfos = [[NSMutableArray alloc] init];
 
     entry_main(3, ^int(char* inputData) {
         NSString* dataString =
             [NSString stringWithCString:inputData encoding:NSUTF8StringEncoding];
+        
+        if (dataString == nil) {
+            return 0;
+        }
+        
         [ExifInfos addObject:dataString];
         return 0;
     }, args);
