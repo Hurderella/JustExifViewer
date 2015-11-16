@@ -7,35 +7,27 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F745D925-3143-40A3-81FA-10438C42F566</string>
 	<key>IDESourceControlProjectName</key>
-	<string>JustExifViewer</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>937EBBB5DB232E683AACFF7FAAC6A84F4BF73009</key>
-		<string>https://github.com/Hurderella/JustExifViwer.git</string>
+		<string>https://github.com/Hurderella/JustExifViewer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ExifEditor_0510/JustExifViewer.xcodeproj</string>
+	<string>ExifEditor_0510/JustExifViewer.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>937EBBB5DB232E683AACFF7FAAC6A84F4BF73009</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Hurderella/JustExifViwer.git</string>
+	<string>https://github.com/Hurderella/JustExifViewer.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>937EBBB5DB232E683AACFF7FAAC6A84F4BF73009</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>937EBBB5DB232E683AACFF7FAAC6A84F4BF73009</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
