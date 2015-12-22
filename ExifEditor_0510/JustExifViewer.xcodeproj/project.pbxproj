@@ -14,6 +14,7 @@
 		E67781081B3E2D9B0043D87D /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = E67781061B3E2D9B0043D87D /* ImageData.m */; };
 		E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */; };
 		E677810E1B3E2DFD0043D87D /* EExifReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810C1B3E2DFD0043D87D /* EExifReader.m */; };
+		E6B0353F1BFC90650066847E /* MainStream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B0353E1BFC90650066847E /* MainStream.storyboard */; };
 		E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */; };
 		E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F21E41191E73CD002BE6AF /* Cocoa.framework */; };
 		E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E4A191E73CD002BE6AF /* InfoPlist.strings */; };
@@ -54,6 +55,7 @@
 		E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifFileHandler.m; path = EExifFile/EExifFileHandler.m; sourceTree = "<group>"; };
 		E677810B1B3E2DFD0043D87D /* EExifReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifReader.h; path = EExifFile/EExifReader.h; sourceTree = "<group>"; };
 		E677810C1B3E2DFD0043D87D /* EExifReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifReader.m; path = EExifFile/EExifReader.m; sourceTree = "<group>"; };
+		E6B0353E1BFC90650066847E /* MainStream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStream.storyboard; sourceTree = "<group>"; };
 		E6E3FD871B3E2C1700229A47 /* EEAddableClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAddableClipView.h; path = ComponentViewPart/EEAddableClipView.h; sourceTree = "<group>"; };
 		E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAddableClipView.m; path = ComponentViewPart/EEAddableClipView.m; sourceTree = "<group>"; };
 		E6F21E3E191E73CD002BE6AF /* JustExifViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustExifViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 				E6F21E56191E73CD002BE6AF /* MainMenu.xib */,
 				E6F21E59191E73CD002BE6AF /* Images.xcassets */,
 				E6F21E48191E73CD002BE6AF /* Supporting Files */,
+				E6B0353E1BFC90650066847E /* MainStream.storyboard */,
 			);
 			name = JustExifViewer;
 			path = ExifEditor_0510;
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */,
+				E6B0353F1BFC90650066847E /* MainStream.storyboard in Resources */,
 				E6F21E5A191E73CD002BE6AF /* Images.xcassets in Resources */,
 				E6F21E52191E73CD002BE6AF /* Credits.rtf in Resources */,
 				E6F21E58191E73CD002BE6AF /* MainMenu.xib in Resources */,

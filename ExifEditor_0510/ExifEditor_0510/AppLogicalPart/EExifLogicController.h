@@ -17,7 +17,6 @@
     IBOutlet NSProgressIndicator* fileReadProg;
     IBOutlet NSTextField* listFileCntState;
     IBOutlet NSTableView* fileTable;
-//    NSMutableArray* exifInfos;
 
     IBOutlet NSTextView* imageInfoView;
     IBOutlet NSImageCell* imageMidThumbView;
@@ -42,13 +41,8 @@
 - (IBAction)removeJPGinList:(id)sender;
 - (void) doubleClickTest:(id)imageData;
 
-- (IBAction)testBtn:(id)sender;
-
-- (IBAction)exportToCsv:(id)sender;
 - (IBAction)imgDoubleClick:(id)sender;
 
-
-//- (IBAction)tableSelect:(id)sender;
 - (void)initInnerObserver;
 - (void)displayFileSelectState:(unsigned long)currentSelect total:(unsigned long)total;
 
