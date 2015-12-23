@@ -98,65 +98,6 @@
     
 }
 
-/*
-- (void) observeValueForKeyPath:(NSString *)keyPath
-                       ofObject:(id)object
-                         change:(NSDictionary *)change
-                        context:(void *)context{
-
-    NSLog(@"Change!: %@", keyPath);
-    
-    if ([keyPath isEqualToString:@"CameraModel"]) {
-
-        NSString* tagString = @"0110";
-        IfdInfo* ifd = ExifIfdDictionary[tagString];
-        
-        if (ifd == nil) return;
-
-//        NSData* data = [ifd Data];
-//        NSString* model = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-//        
-//        NSLog(@"origin model : %@", model);
-
-        NSString* modi_model  = [change valueForKey:@"new"];
-        NSLog(@"modified Model : %@", modi_model);
-        
-        NSData* modi_model_data = [modi_model dataUsingEncoding:NSASCIIStringEncoding];
-        
-        IfdInfo* modi_ifd = [[IfdInfo alloc] init];
-        modi_ifd.Tag = ifd.Tag;
-        modi_ifd.Type = ifd.Type;
-        modi_ifd.ComponentCount = (unsigned int)[modi_model_data length];
-        modi_ifd.Data = modi_model_data;
-        
-        ExifIfdDictionary[tagString] = modi_ifd;
-        
-    }else if([keyPath isEqualToString:@"FileDate"]){
-        
-        NSString* tagString = @"0132";
-        IfdInfo* ifd = ExifIfdDictionary[tagString];
-        
-        if (ifd == nil) return;
-        
-        NSDate* dateInfo = [change valueForKey:@"new"];
-        NSLog(@"date Info : %@", dateInfo);
-//        ifd.fi
-    }
-    
-//    NSLog(@"Tag :0x%X", [ifd Tag]);
-
-//    date:infoData.ExifIfdDictionary[@"0132"]
-//     brand:infoData.ExifIfdDictionary[@"010F"]
-//     model:infoData.ExifIfdDictionary[@"0110"]
-//     
-//     @property u_short Tag;
-//     @property u_short Type;
-//     @property u_int ComponentCount;
-//     @property NSData* Data;
-
-
-
-}*/
 
 - (void) makeDetailExifInfoData:(NSString*) filePath
                    Ifd_0_Fmt_Key:(NSArray*) keysOf_0_ifd
@@ -168,29 +109,11 @@
     self->ImageBitmap = [[NSImage alloc] initWithContentsOfFile:filePath];
     
     NSArray* dirs = [filePath componentsSeparatedByString:@"/"];
-    
     self->FileName = [dirs lastObject];
-    
     
     NSString* imageInfoStr = @"";
     
     NSDictionary* dicOf_0_ifd = self->ExifIfdDictionary;
-//    NSDictionary* dicOf_sub_ifd = self->SubIfdDictionary;
-
-//    NSDictionary* tagOf0Dic = [NSDictionary dictionaryWithObjects:fmtStrOf_0_ifd
-//                                                          forKeys:keysOf_0_ifd];
-//
-//    NSDictionary* tagOfSubDic = [NSDictionary dictionaryWithObjects:fmtStrOf_sub_ifd
-//                                                            forKeys:keysOf_sub_ifd];
-
-//    imageInfoStr = [self makingImageInfoStringWithOrderedKey:keysOf_0_ifd//orderedKeysOf0IFD
-//                                                     InfoDic:dicOf_0_ifd
-//                                                      FmtDic:tagOf0Dic];
-//    
-//    imageInfoStr = [imageInfoStr stringByAppendingString:
-//                    [self makingImageInfoStringWithOrderedKey:keysOf_sub_ifd//orderedKeysOfSubIFD
-//                                                      InfoDic:dicOf_sub_ifd
-//                                                       FmtDic:tagOfSubDic]];
     imageInfoStr = [EEJhead runParsing:self->FullPath];
     
     IfdInfo* dateIfd = dicOf_0_ifd[@"0132"];
@@ -201,21 +124,6 @@
         NSLog(@"Empty Date");
         self->FileDate = [NSDate dateWithString:@"1970-01-01 00:00:00 +0000"];
     }
-    
-    // 0 IFD
-    // 0x010e	ImageDescription
-    // 0x011a	XResolution
-    // 0x011b	YResolution
-    
-    // Sub
-    // 0x829a	ExposureTime
-    // 0x829d	FNumber
-    // 0x8827	ISOSpeedRatings
-    // 0x9205	MaxApertureValue
-    // 0x9208	LightSource
-    // 0x9209	Flash
-    // 0x920a	FocalLength
-    //
     
     NSFont* font = [NSFont fontWithName:@"Courier" size:14];
     self.ImageInfoString = [[NSMutableAttributedString alloc]initWithString:imageInfoStr];
@@ -274,7 +182,6 @@
 
 @end
 
-/////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 @implementation IfdInfo
@@ -336,7 +243,6 @@
         return ret;
     };
     
-//    NSLog(@"self.Type : %d\n", self.Type);
     switch (self.Type) {
         case 1:
         case 3:
@@ -395,30 +301,3 @@
 }
 
 @end
-
-//@implementation EEUtils
-//
-//+ (NSString*) GenerateNotNullEndUTFString:(char *)c_str
-//                                   length:(unsigned long)leng{
-//    
-//    unsigned long byteLength = leng;
-//    char* dataByte = c_str;
-//    if (byteLength == 0 || c_str == 0) {
-//        return nil;
-//    }
-//    
-//    if (dataByte[byteLength-1] == '\0') {
-//        byteLength--;
-//    }
-//    
-//    NSString* nullessString = [[NSString alloc] initWithBytes:dataByte
-//                                                       length:byteLength
-//                                                     encoding:NSUTF8StringEncoding];
-//    
-//    
-//    return nullessString;
-//}
-//
-////+ (NSString*) RemoveLastNullChar:(char*) c_str length:(unsigned long)leng;
-//@end
-
