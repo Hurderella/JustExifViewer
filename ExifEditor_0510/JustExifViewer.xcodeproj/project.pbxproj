@@ -15,6 +15,9 @@
 		E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810A1B3E2DFD0043D87D /* EExifFileHandler.m */; };
 		E677810E1B3E2DFD0043D87D /* EExifReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E677810C1B3E2DFD0043D87D /* EExifReader.m */; };
 		E6B0353F1BFC90650066847E /* MainStream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B0353E1BFC90650066847E /* MainStream.storyboard */; };
+		E6CA531A1C6B6A2000814424 /* EEMapWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CA53181C6B6A2000814424 /* EEMapWindowController.m */; };
+		E6CA531B1C6B6A2000814424 /* EEMapWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6CA53191C6B6A2000814424 /* EEMapWindowController.xib */; };
+		E6CA531D1C6B75FF00814424 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CA531C1C6B75FF00814424 /* MapKit.framework */; };
 		E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */; };
 		E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F21E41191E73CD002BE6AF /* Cocoa.framework */; };
 		E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6F21E4A191E73CD002BE6AF /* InfoPlist.strings */; };
@@ -56,6 +59,10 @@
 		E677810B1B3E2DFD0043D87D /* EExifReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EExifReader.h; path = EExifFile/EExifReader.h; sourceTree = "<group>"; };
 		E677810C1B3E2DFD0043D87D /* EExifReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EExifReader.m; path = EExifFile/EExifReader.m; sourceTree = "<group>"; };
 		E6B0353E1BFC90650066847E /* MainStream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStream.storyboard; sourceTree = "<group>"; };
+		E6CA53171C6B6A2000814424 /* EEMapWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEMapWindowController.h; sourceTree = "<group>"; };
+		E6CA53181C6B6A2000814424 /* EEMapWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEMapWindowController.m; sourceTree = "<group>"; };
+		E6CA53191C6B6A2000814424 /* EEMapWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEMapWindowController.xib; sourceTree = "<group>"; };
+		E6CA531C1C6B75FF00814424 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6E3FD871B3E2C1700229A47 /* EEAddableClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAddableClipView.h; path = ComponentViewPart/EEAddableClipView.h; sourceTree = "<group>"; };
 		E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAddableClipView.m; path = ComponentViewPart/EEAddableClipView.m; sourceTree = "<group>"; };
 		E6F21E3E191E73CD002BE6AF /* JustExifViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustExifViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CA531D1C6B75FF00814424 /* MapKit.framework in Frameworks */,
 				E6F21E42191E73CD002BE6AF /* Cocoa.framework in Frameworks */,
 				E667F6F61B5E997600506817 /* libjheadCustom.a in Frameworks */,
 			);
@@ -117,6 +125,16 @@
 				E6E3FD881B3E2C1700229A47 /* EEAddableClipView.m */,
 			);
 			name = ComponentViewPart;
+			sourceTree = "<group>";
+		};
+		E6CA53141C6B145700814424 /* MapWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E6CA53171C6B6A2000814424 /* EEMapWindowController.h */,
+				E6CA53181C6B6A2000814424 /* EEMapWindowController.m */,
+				E6CA53191C6B6A2000814424 /* EEMapWindowController.xib */,
+			);
+			name = MapWindow;
 			sourceTree = "<group>";
 		};
 		E6CEB87D195DC7D300598D46 /* EExifFile */ = {
@@ -175,6 +193,7 @@
 		E6F21E40191E73CD002BE6AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6CA531C1C6B75FF00814424 /* MapKit.framework */,
 				E6F21E41191E73CD002BE6AF /* Cocoa.framework */,
 				E6F21E60191E73CD002BE6AF /* XCTest.framework */,
 				E6F21E43191E73CD002BE6AF /* Other Frameworks */,
@@ -195,6 +214,7 @@
 		E6F21E47191E73CD002BE6AF /* JustExifViewer */ = {
 			isa = PBXGroup;
 			children = (
+				E6CA53141C6B145700814424 /* MapWindow */,
 				E6AAD2D21AD5555A0091B8EC /* ComponentViewPart */,
 				E63E98991AC98F91009703FF /* JustExifViewer.entitlements */,
 				E6D7B6CB1A08F9110022F018 /* AppLogicalPart */,
@@ -328,6 +348,7 @@
 				E6F21E4C191E73CD002BE6AF /* InfoPlist.strings in Resources */,
 				E6B0353F1BFC90650066847E /* MainStream.storyboard in Resources */,
 				E6F21E5A191E73CD002BE6AF /* Images.xcassets in Resources */,
+				E6CA531B1C6B6A2000814424 /* EEMapWindowController.xib in Resources */,
 				E6F21E52191E73CD002BE6AF /* Credits.rtf in Resources */,
 				E6F21E58191E73CD002BE6AF /* MainMenu.xib in Resources */,
 			);
@@ -354,6 +375,7 @@
 				E6E3FD891B3E2C1700229A47 /* EEAddableClipView.m in Sources */,
 				E677810D1B3E2DFD0043D87D /* EExifFileHandler.m in Sources */,
 				E677810E1B3E2DFD0043D87D /* EExifReader.m in Sources */,
+				E6CA531A1C6B6A2000814424 /* EEMapWindowController.m in Sources */,
 				E6F21E55191E73CD002BE6AF /* EEAppDelegate.m in Sources */,
 				E6F21E4E191E73CD002BE6AF /* main.m in Sources */,
 				E67781071B3E2D9B0043D87D /* EExifInfoArray.m in Sources */,

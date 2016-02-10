@@ -9,7 +9,6 @@
 #import "EExifLogicController.h"
 #import "EExifReader.h"
 
-
 @implementation EExifLogicController
 
 - (id)init{
@@ -206,6 +205,20 @@
         [self doubleClickTest:imageData];
     }
     
+}
+
+- (IBAction)mapBtn:(id)sender{
+
+    NSLog(@"mapBtn click!");
+
+    if (mapWindow == nil) {
+        
+        mapWindow = [[EEMapWindowController alloc] initWithWindowNibName:@"EEMapWindowController"];
+        [mapWindow showWindow:mapWindow];
+        
+    }
+    
+    [mapWindow showWindow:mapWindow];
 }
 
 - (void) doubleClickTest:(id)imageData{

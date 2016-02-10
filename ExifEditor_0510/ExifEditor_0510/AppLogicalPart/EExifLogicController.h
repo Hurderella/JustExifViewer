@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EEAddableClipView.h"
 #import "EExifInfoArray.h"
 #import "ImageData.h"
-#import "EEAddableClipView.h"
+#import "EEMapWindowController.h"
 
 @interface EExifLogicController : NSObject{
 
@@ -34,6 +35,8 @@
     
     NSImage* defaultIcon;
     
+    EEMapWindowController* mapWindow;
+    
     void (^fileAddBlock)(NSString*);
 }
 
@@ -42,6 +45,7 @@
 - (void) doubleClickTest:(id)imageData;
 
 - (IBAction)imgDoubleClick:(id)sender;
+- (IBAction)mapBtn:(id)sender;
 
 - (void)initInnerObserver;
 - (void)displayFileSelectState:(unsigned long)currentSelect total:(unsigned long)total;
