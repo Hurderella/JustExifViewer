@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <MapKit/MapKit.h>
+#import "EEMapController.h"
 
-@interface EEMapWindowController : NSWindowController <MKMapViewDelegate>
+@interface EEMapWindowController : NSWindowController {
 
+}
+
+@property (assign) IBOutlet EEMapController* mapContorller;
+@property (assign) EExifInfoArray* annotationData;
 @end

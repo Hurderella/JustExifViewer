@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EEMapWindowController">
             <connections>
+                <outlet property="mapContorller" destination="rMv-az-DnJ" id="czE-U8-WKQ"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -33,10 +34,12 @@
                     <constraint firstItem="dr6-ZN-YrN" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="uPc-3D-mcv"/>
                 </constraints>
             </view>
-            <connections>
-                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
-            </connections>
             <point key="canvasLocation" x="234" y="213.5"/>
         </window>
+        <customObject id="rMv-az-DnJ" customClass="EEMapController">
+            <connections>
+                <outlet property="mkMapView" destination="dr6-ZN-YrN" id="py0-x3-vKd"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

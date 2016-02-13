@@ -15,8 +15,6 @@
 @synthesize ImageInfoString;
 @synthesize FileName;
 @synthesize FullPath;
-//@synthesize CameraModel;
-//@synthesize CameraBrand;
 @synthesize FileDate;
 @synthesize ImageBitmap;
 @synthesize DqtStartPos;
@@ -25,18 +23,17 @@
 @synthesize SubIfdDictionary;
 @synthesize ThumbIfdDictionary;
 
+@synthesize coordinate;
+static int k = 0;
 - (id) init{
-
+    k++;
     self = [super init];
     
     if (self) {
         ImageInfoString = nil;
         FileName = @"no name";
         FullPath = @"no path";
-//        Date = @"1970-01-01 00:00:00 +0000";//YYYY-MM-DD HH:MM:SS ±HHMM
 
-//        CameraModel = @"";
-//        CameraBrand = @"no brand";
         FileDate = nil;
         ImageBitmap = nil;
         DqtStartPos = 0;
@@ -45,59 +42,20 @@
         ExifIfdDictionary = [[NSMutableDictionary alloc] init];
         SubIfdDictionary = [[NSMutableDictionary alloc] init];
         ThumbIfdDictionary = [[NSMutableDictionary alloc] init];
-        /*
-        [self addObserver:self
-               forKeyPath:@"CameraModel"
-                  options:NSKeyValueObservingOptionNew
-                  context:nil];
-        [self addObserver:self
-               forKeyPath:@"FileDate"
-                  options:NSKeyValueObservingOptionNew
-                  context:nil];
-        */
+
+        coordinate.latitude = 37.265310f + k;
+        coordinate.longitude = 127.040785f + k;
+//        
+//        if (k % 2 == 0) {
+//            coordinate = kCLLocationCoordinate2DInvalid;
+//        }
+
+
     }
     
     return self;
 
 }
-
-- (void) syncImgDataToIfdData{
-    NSLog(@"syncImgDataToIfdData");
-    
-    // Camera Model     //0110
-    // Camera Brand     //010F
-    // File Date        //0132
-    
-//    IfdInfo* modelIfd = ExifIfdDictionary[@"0110"];
-//    int unitSize = bytePerComponent[modelIfd.Type];
-//    NSData* modelData = [self.CameraModel dataUsingEncoding:NSASCIIStringEncoding];
-//    ExifIfdDictionary[@"0110"] = [[IfdInfo alloc] initWithTag:modelIfd.Tag
-//                                                         Type:modelIfd.Type
-//                                              ComponenetCount:(u_int)[modelData length] / unitSize
-//                                                         Data:modelData];
-//    
-//    IfdInfo* brandIfd = ExifIfdDictionary[@"010F"];
-//    unitSize = bytePerComponent[brandIfd.Type];
-//    NSData* brandData = [self.CameraBrand dataUsingEncoding:NSASCIIStringEncoding];
-//    ExifIfdDictionary[@"010F"] = [[IfdInfo alloc] initWithTag:brandIfd.Tag
-//                                                         Type:brandIfd.Type
-//                                              ComponenetCount:(u_int)[brandData length] / unitSize
-//                                                         Data:brandData];
-//    
-//    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-//
-//    IfdInfo* dateIfd = ExifIfdDictionary[@"0132"];
-//    unitSize = bytePerComponent[dateIfd.Type];
-//    NSString* fileDateStr = [formatter stringFromDate:self.FileDate];
-//    NSData* fileDateData = [fileDateStr dataUsingEncoding:NSASCIIStringEncoding];
-//    ExifIfdDictionary[@"0132"] = [[IfdInfo alloc] initWithTag:dateIfd.Tag
-//                                                         Type:dateIfd.Type
-//                                              ComponenetCount:(u_int)[fileDateData length] / unitSize
-//                                                         Data:fileDateData];
-    
-}
-
 
 - (void) makeDetailExifInfoData:(NSString*) filePath
                    Ifd_0_Fmt_Key:(NSArray*) keysOf_0_ifd
@@ -177,8 +135,6 @@
     
     return ret;
 }
-
-
 
 @end
 

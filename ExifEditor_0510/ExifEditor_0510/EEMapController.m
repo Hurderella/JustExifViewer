@@ -7,26 +7,54 @@
 //
 
 #import "EEMapController.h"
+#import "ImageData.h"
 
 @implementation EEMapController
 
-- (void) initCenter:(EExifInfoArray*) arr{
+- (void) initNode:(EExifInfoArray*) arr{
 
-    NSLog(@"!!!init Center Cur : %f, %f", mkMapView.centerCoordinate.latitude,
-          mkMapView.centerCoordinate.longitude);
+    annotationData = arr;    
     
-//    CLLocationCoordinate2D settingVal = {37.265310f, 127.040785f};
-//    mkMapView.centerCoordinate = settingVal;
+}
 
-//    MKCoordinateRegion region;
-//    region.center.latitude = 37.265310f;
-//    region.center.longitude = 127.040785f;
-//    region.span.latitudeDelta = 0.1f;
-//    region.span.longitudeDelta = 0.1f;
-//    
-//    [mkMapView setRegion:region];
+- (void) observeValueForKeyPath:(NSString *)keyPath
+                       ofObject:(id)object
+                         change:(NSDictionary<NSString *,id> *)change
+                        context:(void *)context{
+    NSLog(@"map cont OBSERVE!!!!!!!");
+    if ([object isEqual:annotationData]) {
+        NSLog(@"catch!! observer!!!");
+        NSArray* arr = [annotationData arrangedObjects];
+        __block NSMutableArray* validAnnotations = [[NSMutableArray alloc] init];
+        
+        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj,
+                                          NSUInteger idx,
+                                          BOOL * _Nonnull stop) {
 
-    [mkMapView addAnnotations:[arr arrangedObjects]];
+            ImageData* imgData = (ImageData*)obj;
+            if (CLLocationCoordinate2DIsValid(imgData.coordinate)){
+                [validAnnotations addObject:imgData];
+            }
+        }];
+        
+        [mkMapView removeAnnotations:validAnnotations];
+        [mkMapView addAnnotations:validAnnotations];
+
+        ImageData* lastObj = ((ImageData*)[validAnnotations lastObject]);
+        
+        MKCoordinateRegion region;
+        region.center = lastObj.coordinate;
+        region.span.latitudeDelta = 1.0f;
+        region.span.longitudeDelta = 1.0f;
+        [mkMapView setRegion:region];
+        
+    }
+    
 
 }
+
 @end
+
+
+
+

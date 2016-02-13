@@ -13,8 +13,9 @@
 @interface EEMapController : NSObject <MKMapViewDelegate>{
 
     IBOutlet MKMapView* mkMapView;
+    EExifInfoArray* annotationData;
 }
 
-- (void) initCenter:(EExifInfoArray*) arr;
+- (void) initNode:(EExifInfoArray*) arr;
 
 @end

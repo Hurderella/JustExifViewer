@@ -209,13 +209,12 @@
 
 - (IBAction)mapBtn:(id)sender{
 
-    NSLog(@"mapBtn click!");
+    NSLog(@"!!!!!!!!!!!!mapBtn click!");
 
     if (mapWindow == nil) {
         
         mapWindow = [[EEMapWindowController alloc] initWithWindowNibName:@"EEMapWindowController"];
-        [mapWindow showWindow:mapWindow];
-        
+        mapWindow.annotationData = exifInfoArray;
     }
     
     [mapWindow showWindow:mapWindow];

@@ -7,23 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "EExifFileHandler.h"
+#import <MapKit/MapKit.h>
 
 typedef enum{
     EXIF_BIG_ENDIAN = 0x4D4D002A,
     EXIF_LITTLE_ENDIAN = 0x49492A00
 }E_ENDIAN_INFO;
 
-@interface ImageData : NSObject{
+@interface ImageData : NSObject <MKAnnotation> {
 
 @public
     
     NSMutableAttributedString* ImageInfoString;
     NSString* FileName;
     NSString* FullPath;
-
-//    NSString* CameraModel;
-//    NSString* CameraBrand;
     NSDate* FileDate;
     NSImage* ImageBitmap;
     u_char thumbBin[64*1024];
@@ -43,13 +40,9 @@ typedef enum{
                  Ifd_sub_Fmt_Key:(NSArray*) keysOf_sub_ifd
               Ifd_sub_Fmt_String:(NSArray*) fmtStrOf_sub_ifd;
 
-- (void) syncImgDataToIfdData;
-
 @property (readwrite, strong) NSMutableAttributedString* ImageInfoString;
 @property (readwrite, strong) NSString* FileName;
 @property (readwrite, strong) NSString* FullPath;
-//@property (readwrite, strong) NSString* CameraModel;
-//@property (readwrite, strong) NSString* CameraBrand;
 @property (readwrite, strong) NSDate* FileDate;
 @property (readwrite, strong) NSImage* ImageBitmap;
 @property (readwrite) int DqtStartPos;
@@ -58,10 +51,10 @@ typedef enum{
 @property (readwrite, strong) NSMutableDictionary* SubIfdDictionary;
 @property (readwrite, strong) NSMutableDictionary* ThumbIfdDictionary;
 
+@property(nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
 @end
 
-
-/////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 static const u_char bytePerComponent[13] = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8};

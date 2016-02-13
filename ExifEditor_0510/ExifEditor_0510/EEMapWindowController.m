@@ -14,10 +14,23 @@
 
 @implementation EEMapWindowController
 
+@synthesize mapContorller;
+@synthesize annotationData;
+
 - (void)windowDidLoad {
+
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    if(mapContorller != nil && annotationData != nil) {
+
+        [mapContorller initNode:annotationData];
+        [annotationData addObserver:mapContorller
+                         forKeyPath:@"arrangedObjects"
+                            options:NSKeyValueObservingOptionInitial
+                            context:nil];
+    }
+    
 }
+
 
 @end
