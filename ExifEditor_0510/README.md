@@ -12,6 +12,7 @@ jhead library c code base library.
 =====================================
 
 to do list
+
 1. add map windows viewing gps info in jpeg exif.
 
 1-1. now, Can view dummy gps in ImageData.
