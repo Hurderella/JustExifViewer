@@ -1,4 +1,4 @@
-# ExifEditor_0510
+# ExifEditor
 
 It is just simple Exif Viewer Mac App.
 
