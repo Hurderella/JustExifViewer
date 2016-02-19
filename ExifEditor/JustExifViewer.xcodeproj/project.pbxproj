@@ -180,7 +180,7 @@
 			children = (
 				E667F6E51B5B849B00506817 /* jheadCustom */,
 				E6F21E47191E73CD002BE6AF /* JustExifViewer */,
-				E6F21E65191E73CD002BE6AF /* ExifEditor_0510Tests */,
+				E6F21E65191E73CD002BE6AF /* ExifEditorTests */,
 				E6F21E40191E73CD002BE6AF /* Frameworks */,
 				E6F21E3F191E73CD002BE6AF /* Products */,
 			);
@@ -233,7 +233,7 @@
 				E6B0353E1BFC90650066847E /* MainStream.storyboard */,
 			);
 			name = JustExifViewer;
-			path = ExifEditor_0510;
+			path = ExifEditor;
 			sourceTree = "<group>";
 		};
 		E6F21E48191E73CD002BE6AF /* Supporting Files */ = {
@@ -248,13 +248,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E6F21E65191E73CD002BE6AF /* ExifEditor_0510Tests */ = {
+		E6F21E65191E73CD002BE6AF /* ExifEditorTests */ = {
 			isa = PBXGroup;
 			children = (
 				E6F21E6B191E73CD002BE6AF /* ExifEditor_0510Tests.m */,
 				E6F21E66191E73CD002BE6AF /* Supporting Files */,
 			);
-			path = ExifEditor_0510Tests;
+			path = ExifEditorTests;
 			sourceTree = "<group>";
 		};
 		E6F21E66191E73CD002BE6AF /* Supporting Files */ = {
@@ -528,8 +528,8 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
-				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				GCC_PREFIX_HEADER = "ExifEditor/JustExifViewer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ExifEditor/JustExifViewer-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/heochansoon/Documents/XcodeProject/JustExifViewer/Debug,
@@ -552,8 +552,8 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExifEditor_0510/JustExifViewer-Prefix.pch";
-				INFOPLIST_FILE = "ExifEditor_0510/JustExifViewer-Info.plist";
+				GCC_PREFIX_HEADER = "ExifEditor/JustExifViewer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ExifEditor/JustExifViewer-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/heochansoon/Documents/XcodeProject/JustExifViewer/Debug,
