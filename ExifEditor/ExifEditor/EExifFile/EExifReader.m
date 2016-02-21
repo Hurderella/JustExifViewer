@@ -52,7 +52,6 @@
                                                     userInfo:debugDic];
         [except raise];
 
-//        [NSException raise:@"JpegTagError" format:@"JpegStartTag is not 0xFFD8!"];
     }
     
     
@@ -70,9 +69,9 @@
         
         switch (exifTag) {
             case 0xFFE1:
-                [self readExif_FFE1Tag:exifFileHandler
-                              StartPos:[exifFileHandler getCurPos]
-                             ImageData:imageData];
+//                [self readExif_FFE1Tag:exifFileHandler
+//                              StartPos:[exifFileHandler getCurPos]
+//                             ImageData:imageData];
 //                               ExifIFD:infoData.ExifIfdDictionary
 //                               SubIFD:infoData.SubIfdDictionary
 //                              ThumbIFD:infoData.ThumbIfdDictionary];

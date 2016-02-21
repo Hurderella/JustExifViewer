@@ -57,11 +57,7 @@ static int k = 0;
 
 }
 
-- (void) makeDetailExifInfoData:(NSString*) filePath
-                   Ifd_0_Fmt_Key:(NSArray*) keysOf_0_ifd
-                Ifd_0_Fmt_String:(NSArray*) fmtStrOf_0_ifd
-                 Ifd_sub_Fmt_Key:(NSArray*) keysOf_sub_ifd
-              Ifd_sub_Fmt_String:(NSArray*) fmtStrOf_sub_ifd{
+- (void) makeDetailExifInfoData:(NSString*) filePath {
     
     self->FullPath = filePath;
     self->ImageBitmap = [[NSImage alloc] initWithContentsOfFile:filePath];
@@ -70,11 +66,10 @@ static int k = 0;
     self->FileName = [dirs lastObject];
     
     NSString* imageInfoStr = @"";
+    NSString* dateString = @"";
+    imageInfoStr = [EEJhead runParsing:self->FullPath dateStr:dateString];
     
-    NSDictionary* dicOf_0_ifd = self->ExifIfdDictionary;
-    imageInfoStr = [EEJhead runParsing:self->FullPath];
-    
-    IfdInfo* dateIfd = dicOf_0_ifd[@"0132"];
+    IfdInfo* dateIfd = nil;//dicOf_0_ifd[@"0132"];
     if (dateIfd) {
         NSString* dateStr = [dateIfd GenerateNotNullEndUTFString];
         self->FileDate = [self makingNSDateWithIfdString:dateStr];

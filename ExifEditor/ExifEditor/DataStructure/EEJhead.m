@@ -17,7 +17,8 @@
     return 0;
 }
 
-+ (NSString*) runParsing:(NSString*) filePath{
++ (NSString*) runParsing:(NSString*) filePath
+                 dateStr:(NSString *)dateStr{
 
     NSString* appName = @"jhead";
     NSString* FilePath = filePath;
@@ -38,7 +39,7 @@
         if (dataString == nil) {
             return 0;
         }
-        
+
         [ExifInfos addObject:dataString];
         return 0;
     }, args);
@@ -49,6 +50,13 @@
         NSString* info = obj;
         exifInfos = [exifInfos stringByAppendingString:info];
     }];
+    
+    NSArray* exifStrData = [exifInfos componentsSeparatedByString:@"\n"];
+    [exifStrData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString* str = (NSString*)obj;
+        NSLog(@":: %@", str);
+    }];
+    //NSArray* dirs = [filePath componentsSeparatedByString:@"/"];
     
     
     return exifInfos;

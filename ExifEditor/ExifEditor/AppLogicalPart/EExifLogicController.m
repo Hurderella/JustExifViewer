@@ -27,37 +27,6 @@
     [addableClipView addObserver:self forKeyPath:@"AddFileList"
                          options:NSKeyValueObservingOptionNew
                          context:nil];
-
-    orderedKeysOf0IFD = [NSArray arrayWithObjects:
-                                  @"010F",
-                                  @"0110",
-                                  @"010E",
-                                  @"011A",
-                                  @"011B", nil];
-    
-    orderedObjectOf0IFD = [NSArray arrayWithObjects:
-                                    @"MAKE : %@\n",
-                                    @"MODEL : %@\n",
-                                    @"DESCRIPTION : %@\n",
-                                    @"X Resolution : %@\n",
-                                    @"Y Resolution : %@\n", nil];
-
-    orderedKeysOfSubIFD = [NSArray arrayWithObjects:
-                                    @"829A", @"829D", @"8827",
-                                    @"9205", @"9208", @"9209", @"920A",
-                                    @"A001", @"A002", @"A003", nil];
-    
-    orderedObjectOfSubIfd = [NSArray arrayWithObjects:
-                                      @"Exposure Time : %@\n",
-                                      @"F Number : %@\n",
-                                      @"ISO Speed : %@\n",
-                                      @"MaxApertureValue : %@\n",
-                                      @"LightSource : %@\n",
-                                      @"Flash : %@\n",
-                                      @"Focal Length : %@\n",
-                                      @"Color Space : %@\n",
-                                      @"Exif Image Width : %@\n",
-                                      @"Exif Image Height : %@\n", nil];
     
     defaultIcon = [NSImage imageNamed:@"DefaultIcon"];
     
@@ -122,8 +91,6 @@
                   ErrorLog:(NSString**) errorLog{
 
     NSString* urlPath = filePath;
-    EExifReader* exifReader = [[EExifReader alloc] initWithUrl:urlPath];
-    
     NSPredicate* predicate = [NSPredicate
                               predicateWithFormat:@"FullPath like %@", urlPath];
     NSArray* arr = [[exifInfos arrangedObjects] filteredArrayUsingPredicate:predicate];
@@ -134,15 +101,11 @@
     }
     
     @try{
+
         ImageData* readData = [[ImageData alloc] init];
-        if([exifReader readImageData:readData]){
-            
-            [readData makeDetailExifInfoData:urlPath
-                               Ifd_0_Fmt_Key:orderedKeysOf0IFD
-                            Ifd_0_Fmt_String:orderedObjectOf0IFD
-                             Ifd_sub_Fmt_Key:orderedKeysOfSubIFD
-                          Ifd_sub_Fmt_String:orderedObjectOfSubIfd];
-            
+        if(readData){
+        
+            [readData makeDetailExifInfoData:urlPath];
             [exifInfos addObject:readData];
         }
     }@catch(NSException* e){

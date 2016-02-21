@@ -26,13 +26,7 @@
     IBOutlet EEAddableClipView* addableClipView;
     
     NSMutableArray* windowControllers;
-    
-    NSArray* orderedKeysOf0IFD;
-    NSArray* orderedObjectOf0IFD;
-    
-    NSArray* orderedKeysOfSubIFD;
-    NSArray* orderedObjectOfSubIfd;
-    
+        
     NSImage* defaultIcon;
     
     EEMapWindowController* mapWindow;

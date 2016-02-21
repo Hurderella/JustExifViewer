@@ -34,11 +34,7 @@ typedef enum{
     
 }
 
-- (void) makeDetailExifInfoData:(NSString*) filePath
-                   Ifd_0_Fmt_Key:(NSArray*) keysOf_0_ifd
-                Ifd_0_Fmt_String:(NSArray*) fmtStrOf_0_ifd
-                 Ifd_sub_Fmt_Key:(NSArray*) keysOf_sub_ifd
-              Ifd_sub_Fmt_String:(NSArray*) fmtStrOf_sub_ifd;
+- (void) makeDetailExifInfoData:(NSString*) filePath;
 
 @property (readwrite, strong) NSMutableAttributedString* ImageInfoString;
 @property (readwrite, strong) NSString* FileName;

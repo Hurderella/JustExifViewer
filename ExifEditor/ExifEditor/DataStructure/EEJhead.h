@@ -12,6 +12,7 @@
 
 
 + (int) testDummy:(char*) inputData;
-+ (NSString*) runParsing:(NSString*) filePath;
++ (NSString*) runParsing:(NSString*) filePath
+                 dateStr:(NSString*) dateStr;
 
 @end
