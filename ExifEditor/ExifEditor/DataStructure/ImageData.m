@@ -66,13 +66,15 @@ static int k = 0;
     self->FileName = [dirs lastObject];
     
     NSString* imageInfoStr = @"";
-    NSString* dateString = @"";
+    NSMutableString* dateString = [[NSMutableString alloc] init];
     imageInfoStr = [EEJhead runParsing:self->FullPath dateStr:dateString];
     
-    IfdInfo* dateIfd = nil;//dicOf_0_ifd[@"0132"];
-    if (dateIfd) {
-        NSString* dateStr = [dateIfd GenerateNotNullEndUTFString];
-        self->FileDate = [self makingNSDateWithIfdString:dateStr];
+    NSLog(@">>>>>> %@", dateString);
+    
+//    IfdInfo* dateIfd = nil;//dicOf_0_ifd[@"0132"];
+    if (dateString) {
+//        NSString* dateStr = [dateIfd GenerateNotNullEndUTFString];
+        self->FileDate = [self makingNSDateWithIfdString:dateString];
     }else{
         NSLog(@"Empty Date");
         self->FileDate = [NSDate dateWithString:@"1970-01-01 00:00:00 +0000"];
@@ -92,20 +94,22 @@ static int k = 0;
 - (NSDate*) makingNSDateWithIfdString:(NSString*) dateString{
     
     NSArray* dateEle = [dateString componentsSeparatedByCharactersInSet:
-                        [NSCharacterSet characterSetWithCharactersInString:@" \0"]];
+                        [NSCharacterSet characterSetWithCharactersInString:@" \0\""]];
     
     NSString* dateInfo = @"";
-    dateInfo = [dateEle[0] stringByReplacingOccurrencesOfString:@":" withString:@"-"];
+    dateInfo = [dateEle[2] stringByReplacingOccurrencesOfString:@":" withString:@"-"];
     dateInfo = [dateInfo stringByAppendingString:@" "];
-    dateInfo = [dateInfo stringByAppendingString:dateEle[1]];
+    dateInfo = [dateInfo stringByAppendingString:dateEle[3]];
     
     NSTimeZone* systemTimeZone = [NSTimeZone systemTimeZone];
+    //[NSTimeZone timeZoneWithName:@"Europe/London"];
     NSLog(@"%@", systemTimeZone);
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSDate* date = [formatter dateFromString:dateInfo];
+
     return date;
     
 }

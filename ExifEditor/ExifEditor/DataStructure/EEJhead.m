@@ -18,7 +18,7 @@
 }
 
 + (NSString*) runParsing:(NSString*) filePath
-                 dateStr:(NSString *)dateStr{
+                 dateStr:(NSMutableString*) dateStr{
 
     NSString* appName = @"jhead";
     NSString* FilePath = filePath;
@@ -30,7 +30,7 @@
         (char*)[FilePath cStringUsingEncoding:NSUTF8StringEncoding]
     };
     
-    __block NSMutableArray* ExifInfos = [[NSMutableArray alloc] init];
+    __block NSMutableArray* parsingData = [[NSMutableArray alloc] init];
 
     entry_main(3, ^int(char* inputData) {
         NSString* dataString =
@@ -40,26 +40,41 @@
             return 0;
         }
 
-        [ExifInfos addObject:dataString];
+        [parsingData addObject:dataString];
         return 0;
     }, args);
 
-    __block NSString* exifInfos = @"";
+    __block NSString* reportOfImage = @"";
     
-    [ExifInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [parsingData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString* info = obj;
-        exifInfos = [exifInfos stringByAppendingString:info];
+        reportOfImage = [reportOfImage stringByAppendingString:info];
     }];
     
-    NSArray* exifStrData = [exifInfos componentsSeparatedByString:@"\n"];
-    [exifStrData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString* str = (NSString*)obj;
-        NSLog(@":: %@", str);
+    __block NSString* elementData;
+    NSArray* infoLines = [reportOfImage componentsSeparatedByString:@"\n"];
+    
+    [infoLines enumerateObjectsUsingBlock:
+     ^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+        NSArray* elements = [(NSString*)obj componentsSeparatedByString:@"="];
+
+         if( [elements count] < 2) return;
+          NSString* dataKeyword = [(NSString*) elements[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+         if ([dataKeyword compare:@"DateTime" options:NSLiteralSearch range:(NSRange){0, 8}] == 0) {
+             elementData = (NSString*) elements[1];
+             NSLog(@"date string  : %@", elementData);
+             *stop = true;
+         }
+        
     }];
-    //NSArray* dirs = [filePath componentsSeparatedByString:@"/"];
+    
+    [dateStr insertString:elementData atIndex:0];
+//    dateStr = elementData;
     
     
-    return exifInfos;
+    return reportOfImage;
 }
 
 
