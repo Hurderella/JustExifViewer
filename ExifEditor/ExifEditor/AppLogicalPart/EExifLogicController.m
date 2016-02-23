@@ -16,9 +16,9 @@
     self = [super init];
     return self;
 }
-- (void)initInnerObserver{
+- (void)preoperate{
     
-    NSLog(@"initInnerObserver");
+//    NSLog(@"initInnerObserver");
     windowControllers = [[NSMutableArray alloc] init];
     
     [exifInfoArray addObserver:self forKeyPath:@"selection"
@@ -31,6 +31,10 @@
     defaultIcon = [NSImage imageNamed:@"DefaultIcon"];
     
     [imageMidThumbView setImage:defaultIcon];
+
+    [timeZonePopup removeAllItems];
+    [timeZonePopup addItemsWithTitles:[NSTimeZone knownTimeZoneNames]];
+//    [timeZonePopup selectItemWithTitle:@"Europe/London"];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object

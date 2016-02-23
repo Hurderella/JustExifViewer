@@ -64,15 +64,12 @@
 
          if ([dataKeyword compare:@"DateTime" options:NSLiteralSearch range:(NSRange){0, 8}] == 0) {
              elementData = (NSString*) elements[1];
-             NSLog(@"date string  : %@", elementData);
              *stop = true;
          }
         
     }];
     
     [dateStr insertString:elementData atIndex:0];
-//    dateStr = elementData;
-    
     
     return reportOfImage;
 }

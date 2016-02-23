@@ -40,6 +40,7 @@ typedef enum{
 @property (readwrite, strong) NSString* FileName;
 @property (readwrite, strong) NSString* FullPath;
 @property (readwrite, strong) NSDate* FileDate;
+@property (readwrite, strong) NSTimeZone* FileTimeZone;
 @property (readwrite, strong) NSImage* ImageBitmap;
 @property (readwrite) int DqtStartPos;
 @property (readwrite) uint ExifPivotPos;

@@ -481,11 +481,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="226" height="247"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="537" height="247"/>
-                                                <size key="maxSize" width="559" height="10000000"/>
+                                                <size key="minSize" width="226" height="133"/>
+                                                <size key="maxSize" width="854" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="537" height="247"/>
-                                                <size key="maxSize" width="559" height="10000000"/>
+                                                <size key="minSize" width="226" height="133"/>
+                                                <size key="maxSize" width="854" height="10000000"/>
                                                 <connections>
                                                     <binding destination="BZA-Xa-xcn" name="attributedString" keyPath="selection.ImageInfoString" id="ghA-j1-P2z">
                                                         <dictionary key="options">
@@ -663,6 +663,23 @@
                             <action selector="mapBtn:" target="cHv-B6-tih" id="I9g-Ey-4wh"/>
                         </connections>
                     </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-6x-k3M">
+                        <rect key="frame" x="304" y="24" width="284" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TKG-Wq-SdL" id="tGe-mA-zvz">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="nxP-gd-8hh">
+                                <items>
+                                    <menuItem state="on" id="TKG-Wq-SdL"/>
+                                    <menuItem title="Item 2" id="NTY-S0-RRP"/>
+                                    <menuItem title="Item 3" id="iH3-Gg-9Gk"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="BZA-Xa-xcn" name="selectedValue" keyPath="selection.FileTimeZone.name" id="ABD-MJ-Pxh"/>
+                        </connections>
+                    </popUpButton>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XDn-83-2uT" firstAttribute="top" secondItem="INB-3Q-WjE" secondAttribute="bottom" constant="8" id="1K9-HR-M8O"/>
@@ -714,8 +731,9 @@
                 <outlet property="fileReadProg" destination="lYZ-1h-KLR" id="GpQ-6A-Ods"/>
                 <outlet property="fileTable" destination="18y-84-KO8" id="wto-Cc-WWi"/>
                 <outlet property="imageInfoView" destination="HVL-SX-QRg" id="zV1-hl-WVh"/>
-                <outlet property="imageMidThumbView" destination="MUD-bM-zQ5" id="9Cf-l2-6VH"/>
+                <outlet property="imageMidThumbView" destination="MUD-bM-zQ5" id="bxQ-dP-sJk"/>
                 <outlet property="listFileCntState" destination="WRZ-M1-uty" id="368-sk-rIg"/>
+                <outlet property="timeZonePopup" destination="9Jc-6x-k3M" id="WKw-GN-5VQ"/>
             </connections>
         </customObject>
         <userDefaultsController representsSharedInstance="YES" id="60r-zR-n83"/>

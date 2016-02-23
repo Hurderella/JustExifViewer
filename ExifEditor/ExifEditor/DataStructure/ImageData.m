@@ -14,6 +14,7 @@
 
 @synthesize ImageInfoString;
 @synthesize FileName;
+@synthesize FileTimeZone;
 @synthesize FullPath;
 @synthesize FileDate;
 @synthesize ImageBitmap;
@@ -69,11 +70,7 @@ static int k = 0;
     NSMutableString* dateString = [[NSMutableString alloc] init];
     imageInfoStr = [EEJhead runParsing:self->FullPath dateStr:dateString];
     
-    NSLog(@">>>>>> %@", dateString);
-    
-//    IfdInfo* dateIfd = nil;//dicOf_0_ifd[@"0132"];
     if (dateString) {
-//        NSString* dateStr = [dateIfd GenerateNotNullEndUTFString];
         self->FileDate = [self makingNSDateWithIfdString:dateString];
     }else{
         NSLog(@"Empty Date");
@@ -101,12 +98,16 @@ static int k = 0;
     dateInfo = [dateInfo stringByAppendingString:@" "];
     dateInfo = [dateInfo stringByAppendingString:dateEle[3]];
     
-    NSTimeZone* systemTimeZone = [NSTimeZone systemTimeZone];
-    //[NSTimeZone timeZoneWithName:@"Europe/London"];
-    NSLog(@"%@", systemTimeZone);
+//    NSTimeZone* systemTimeZone = [NSTimeZone systemTimeZone];
+//    systemTimeZone = [NSTimeZone timeZoneWithName:@"Europe/London"];
+//    NSLog(@"%@", systemTimeZone);
     
+    FileTimeZone = [NSTimeZone timeZoneWithName:@"GMT"];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    [formatter setTimeZone:systemTimeZone];
+    
+//    NSLog(@"ttt test : %@", [FileTimeZone name]);
     
     NSDate* date = [formatter dateFromString:dateInfo];
 

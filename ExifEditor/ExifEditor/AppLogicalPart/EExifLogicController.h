@@ -22,6 +22,7 @@
     IBOutlet NSTextView* imageInfoView;
     IBOutlet NSImageCell* imageMidThumbView;
     IBOutlet NSButton* makeBtn;
+    IBOutlet NSPopUpButton* timeZonePopup;
     
     IBOutlet EEAddableClipView* addableClipView;
     
@@ -41,7 +42,7 @@
 - (IBAction)imgDoubleClick:(id)sender;
 - (IBAction)mapBtn:(id)sender;
 
-- (void)initInnerObserver;
+- (void)preoperate;
 - (void)displayFileSelectState:(unsigned long)currentSelect total:(unsigned long)total;
 
 @end
