@@ -42,6 +42,8 @@
 - (IBAction)imgDoubleClick:(id)sender;
 - (IBAction)mapBtn:(id)sender;
 
+- (IBAction)test:(id)sender;
+
 - (void)preoperate;
 - (void)displayFileSelectState:(unsigned long)currentSelect total:(unsigned long)total;
 

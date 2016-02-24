@@ -481,10 +481,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="226" height="247"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="226" height="133"/>
+                                                <size key="minSize" width="537" height="247"/>
                                                 <size key="maxSize" width="854" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="226" height="133"/>
+                                                <size key="minSize" width="537" height="247"/>
                                                 <size key="maxSize" width="854" height="10000000"/>
                                                 <connections>
                                                     <binding destination="BZA-Xa-xcn" name="attributedString" keyPath="selection.ImageInfoString" id="ghA-j1-P2z">
@@ -677,9 +677,20 @@
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="BZA-Xa-xcn" name="selectedValue" keyPath="selection.FileTimeZone.name" id="ABD-MJ-Pxh"/>
+                            <action selector="test:" target="cHv-B6-tih" id="vDD-mL-mm7"/>
+                            <binding destination="BZA-Xa-xcn" name="selectedValue" keyPath="selection.FileTimeZone" id="qAA-pH-RkN"/>
                         </connections>
                     </popUpButton>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNw-0M-iOQ">
+                        <rect key="frame" x="605" y="19" width="81" height="32"/>
+                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="91b-3T-hvF">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="test:" target="cHv-B6-tih" id="Ves-fV-N88"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XDn-83-2uT" firstAttribute="top" secondItem="INB-3Q-WjE" secondAttribute="bottom" constant="8" id="1K9-HR-M8O"/>
