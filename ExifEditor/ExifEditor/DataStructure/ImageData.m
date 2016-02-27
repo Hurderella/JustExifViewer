@@ -71,18 +71,27 @@ static int k = 0;
     imageInfoStr = [EEJhead runParsing:self->FullPath dateStr:dateString];
     
     if (dateString) {
-//        self->FileDate = [self makingNSDateWithIfdString:dateString];
-//        self->FileDate =
-        NSString* dateFormat = [self makingNSDateWithIfdString:dateString];
-//        dateFormat = [dateFormat stringByAppendingString:@" +0000"];
+
+        NSArray* dateEle = [dateString componentsSeparatedByCharactersInSet:
+                            [NSCharacterSet characterSetWithCharactersInString:@" \0\""]];
+        NSString* dateFormat = @"";
+
+        dateFormat = [dateEle[2] stringByReplacingOccurrencesOfString:@":" withString:@"-"];
+        dateFormat = [dateFormat stringByAppendingString:@" "];
+        dateFormat = [dateFormat stringByAppendingString:dateEle[3]];
+
         NSLog(@"dateFormat : %@", dateFormat);
         
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         self->FileDate = [formatter dateFromString:dateFormat];
+        self->FileTimeZone = @"Europe/London";
+        
     }else{
+        
         NSLog(@"Empty Date");
         self->FileDate = [NSDate dateWithString:@"1970-01-01 00:00:00 +0000"];
+        
     }
     
     NSFont* font = [NSFont fontWithName:@"Courier" size:14];
@@ -94,34 +103,6 @@ static int k = 0;
     [self.ImageInfoString endEditing];
     
     return;
-}
-
-- (NSString*) makingNSDateWithIfdString:(NSString*) dateString{
-    
-    NSArray* dateEle = [dateString componentsSeparatedByCharactersInSet:
-                        [NSCharacterSet characterSetWithCharactersInString:@" \0\""]];
-    
-    NSString* dateInfo = @"";
-    dateInfo = [dateEle[2] stringByReplacingOccurrencesOfString:@":" withString:@"-"];
-    dateInfo = [dateInfo stringByAppendingString:@" "];
-    dateInfo = [dateInfo stringByAppendingString:dateEle[3]];
-
-    return dateInfo;
-//    NSTimeZone* systemTimeZone = [NSTimeZone systemTimeZone];
-//    systemTimeZone = [NSTimeZone timeZoneWithName:@"Europe/London"];
-//    NSLog(@"%@", systemTimeZone);
-    
-    FileTimeZone = [NSTimeZone timeZoneWithName:@"GMT"].name;
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-//    [formatter setTimeZone:systemTimeZone];
-    
-//    NSLog(@"ttt test : %@", [FileTimeZone name]);
-    
-    NSDate* date = [formatter dateFromString:dateInfo];
-
-    return date;
-    
 }
 
 - (NSString*) makingImageInfoStringWithOrderedKey:(NSArray*) keys

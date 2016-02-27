@@ -97,25 +97,6 @@
             [alert runModal];
         }
 
-    }else if([object isEqual:timeZonePopup]){
-    
-        ImageData* imageData = exifInfoArray.selection;
-//        imageData.FileDate = imageData.FileDate.description;
-        
-        NSString* dateString = imageData.FileDate.description;
-        NSLog(@"date String : %@", dateString);
-        
-//        NSDate* test = [[NSDate alloc] init];
-
-        
-//        FileTimeZone = [NSTimeZone timeZoneWithName:@"GMT"].name;
-//        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-//        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-//        //    [formatter setTimeZone:systemTimeZone];
-//        
-//        //    NSLog(@"ttt test : %@", [FileTimeZone name]);
-//        
-//        NSDate* date = [formatter dateFromString:dateInfo];
     }
 }
 
