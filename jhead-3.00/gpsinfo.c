@@ -203,11 +203,8 @@ void ProcessGpsInfo(unsigned char * DirStart, unsigned char * OffsetBase, unsign
 
                 default:
                     // Handle arrays of numbers later (will there ever be?)
-                    for (a=0;;){
-                        PrintFormatNumber(ValuePtr+a*ComponentSize, Format, ByteCount);
-                        if (++a >= Components) break;
-                        printf(", ");
-                    }
+
+                    PrintFormatNumber(ValuePtr, Format, ByteCount);
                     printf("\n");
             }
         }

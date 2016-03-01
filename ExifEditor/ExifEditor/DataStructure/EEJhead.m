@@ -51,25 +51,35 @@
         reportOfImage = [reportOfImage stringByAppendingString:info];
     }];
     
-    __block NSString* elementData;
+    __block NSString* elementDate;
     NSArray* infoLines = [reportOfImage componentsSeparatedByString:@"\n"];
     
     [infoLines enumerateObjectsUsingBlock:
      ^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 
-        NSArray* elements = [(NSString*)obj componentsSeparatedByString:@"="];
+         NSArray* elements = [(NSString*)obj componentsSeparatedByString:@"="];
 
-         if( [elements count] < 2) return;
-          NSString* dataKeyword = [(NSString*) elements[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+         if ([elements count] >= 2) {
+             NSString* dataKeyword = [(NSString*) elements[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+             
+             if ([dataKeyword compare:@"DateTime" options:NSLiteralSearch range:(NSRange){0, 8}] == 0) {
+                 elementDate = (NSString*) elements[1];
+             }
+         }
+         
+         elements = [(NSString*)obj componentsSeparatedByString:@":"];
+         
+         if([elements count] >= 2){
+         
+             NSString* latitudeKeyword = [(NSString*) elements[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
-         if ([dataKeyword compare:@"DateTime" options:NSLiteralSearch range:(NSRange){0, 8}] == 0) {
-             elementData = (NSString*) elements[1];
-             *stop = true;
+             NSLog(@"%@", latitudeKeyword);
          }
         
     }];
     
-    [dateStr insertString:elementData atIndex:0];
+    
+    [dateStr insertString:elementDate atIndex:0];
     
     return reportOfImage;
 }

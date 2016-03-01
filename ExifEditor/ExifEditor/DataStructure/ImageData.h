@@ -14,6 +14,8 @@ typedef enum{
     EXIF_LITTLE_ENDIAN = 0x49492A00
 }E_ENDIAN_INFO;
 
+static const u_char bytePerComponent[13] = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8};
+
 @interface ImageData : NSObject <MKAnnotation> {
 
 @public
@@ -51,34 +53,3 @@ typedef enum{
 @property(nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 @end
-
-/////////////////////////////////////////////////////////////////////////////////
-
-static const u_char bytePerComponent[13] = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8};
-
-@interface IfdInfo:NSObject
-
-- (id) initWithTag:(u_short) tag
-              Type:(u_short) type
-   ComponenetCount:(u_int) componentCount
-              Data:(NSData*) data
-            Endian:(E_ENDIAN_INFO) endianInfo;
-
-- (NSString*) GenerateNotNullEndUTFString;
-
-- (NSString*) ContentToString;
-
-@property u_short Tag;
-@property u_short Type;
-@property u_int ComponentCount;
-@property NSData* Data;
-@property E_ENDIAN_INFO EndianInfo;
-
-@end
-
-//@interface EEUtils : NSObject
-//
-//+ (NSString*) GenerateNotNullEndUTFString:(char*) c_str
-//                                   length:(unsigned long) leng;
-//
-//@end

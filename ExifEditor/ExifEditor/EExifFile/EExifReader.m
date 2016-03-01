@@ -10,7 +10,7 @@
 #import "EExifFileHandler.h"
 
 @implementation EExifReader
-
+/*
 - (id) init{
     
     self = [super init];
@@ -226,7 +226,7 @@
     
     return true;
 }
-
+*/
 @end
 
 
